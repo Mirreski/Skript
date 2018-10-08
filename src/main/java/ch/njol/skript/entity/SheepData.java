@@ -144,6 +144,7 @@ public class SheepData extends EntityData<Sheep> {
 //		} else {
 //			return "" + sheared;
 //		}
+	@SuppressWarnings("null")
 	@Override
 	protected boolean deserialize(final String s) {
 		final String[] split = s.split("\\|");

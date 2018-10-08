@@ -3,7 +3,6 @@ package ch.njol.skript.mirre;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
-import java.util.logging.Filter;
 
 import ch.njol.skript.command.Commands;
 
@@ -23,7 +22,7 @@ public class FilterPrintStream extends PrintStream {
 	}
 	
 	@Override
-	public synchronized void println(String string){
+	public synchronized void println(@SuppressWarnings("null") String string){
 		if(Commands.suppressUnknownCommandMessage && string.contains("Unknown command. Type")){
 			Commands.suppressUnknownCommandMessage = false;
 			return;

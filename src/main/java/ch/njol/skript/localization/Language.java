@@ -228,6 +228,7 @@ public class Language {
 		return true;
 	}
 	
+	@SuppressWarnings("resource") // closed in line 277.
 	private static boolean load(final SkriptAddon addon, final String name) {
 		if (addon.getLanguageFileDirectory() == null)
 			return false;

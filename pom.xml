@@ -5,7 +5,7 @@
 	<version>2.2-Fixes-V9b</version>
 	<name>Skript</name>
 	<description>A plugin for the Minecraft server API Bukkit that allows to create scripts in natural language.</description>
-	<url>http://njol.ch/projects/skript/</url>
+	<url>https://github.com/Mirreski/Skript</url>
 	<licenses>
 		<license>
 			<name>GNU General Public License 3.0</name>
@@ -15,13 +15,13 @@
 	</licenses>
 	<inceptionYear>2011</inceptionYear>
 	<scm>
-		<developerConnection>scm:git:git://github.com/Njol/Skript.git</developerConnection>
-		<connection>scm:git:git://github.com/Njol/Skript.git</connection>
-		<url>http://github.com/Njol/Skript</url>
+		<developerConnection>scm:git:git://github.com/Mirreski/Skript.git</developerConnection>
+		<connection>scm:git:git://github.com/Mirreski/Skript.git</connection>
+		<url>http://github.com/Mirreski/Skript</url>
 	</scm>
 	<issueManagement>
 		<system>GitHub</system>
-		<url>http://github.com/Njol/Skript/issues</url>
+		<url>http://github.com/Mirreski/Skript/issues</url>
 	</issueManagement>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,13 +31,13 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
-			<version>1.8.7-R0.1-SNAPSHOT</version>
+			<version>1.8.8-R0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
-			<groupId>lib.PatPeter.SQLibrary</groupId>
-			<artifactId>SQLibrary</artifactId>
-			<version>7.1</version>
+			<groupId>patpeter</groupId>
+			<artifactId>sqlibrary</artifactId>
+			<version>4.0</version>
 		</dependency>
 
 		<dependency>
@@ -86,16 +86,16 @@
 	</dependencies>
 	<repositories>
 		<repository>
+			<id>techcable-repo</id>
+			<url>http://repo.techcable.net/content/repositories/public/</url>
+		</repository>
+		<repository>
 			<id>spigot-repo</id>
 			<url>http://hub.spigotmc.org/nexus/content/groups/public/</url>
 		</repository>
 		<repository>
-			<id>sqlibrary-repo</id>
-			<url>http://repo.dakanilabs.com/content/repositories/public/</url>
-		</repository>
-		<repository>
-			<id>vault-repo</id>
-			<url>http://nexus.theyeticave.net/content/repositories/pub_releases/</url>
+	    	<id>vault-repo</id>
+	    	<url>http://nexus.hc.to/content/repositories/pub_releases/</url>
 		</repository>
 		<repository>
 			<id>sk89q-repo</id>

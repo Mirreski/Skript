@@ -114,6 +114,7 @@ public class ClassInfo<T> implements Debuggable {
 	 *            must be english and match singular and plural.
 	 * @throws PatternSyntaxException If any of the patterns' syntaxes is invalid
 	 */
+	@SuppressWarnings("null")
 	public ClassInfo<T> user(final String... userInputPatterns) throws PatternSyntaxException {
 		assert this.userInputPatterns == null;
 		this.userInputPatterns = new Pattern[userInputPatterns.length];
