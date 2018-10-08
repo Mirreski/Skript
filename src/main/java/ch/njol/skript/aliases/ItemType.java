@@ -468,6 +468,7 @@ public class ItemType implements Unit, Iterable<ItemData>, Container<ItemStack>,
 		enchs.put(e, level);
 	}
 	
+	@SuppressWarnings("null")
 	public void addEnchantments(final Map<Enchantment, Integer> enchantments) {
 		if (this.enchantments == null)
 			this.enchantments = new HashMap<Enchantment, Integer>(enchantments);

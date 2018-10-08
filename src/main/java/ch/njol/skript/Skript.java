@@ -33,12 +33,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
-import java.util.concurrent.Callable;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.logging.Filter;
@@ -121,7 +118,6 @@ import ch.njol.skript.variables.Variables;
 import ch.njol.util.Closeable;
 import ch.njol.util.Kleenean;
 import ch.njol.util.NullableChecker;
-import ch.njol.util.Pair;
 import ch.njol.util.StringUtils;
 import ch.njol.util.coll.CollectionUtils;
 import ch.njol.util.coll.iterator.CheckedIterator;
@@ -514,6 +510,7 @@ public final class Skript extends JavaPlugin implements Listener {
 			@Override
 			public void run() {
 				String s = getMirreVersion();
+				if(s == null) return;
 				if(!s.equalsIgnoreCase(MIRRE)){
 					Bukkit.getLogger().info("[Skript] A new version of Skript Fixes has been found. Skript 2.2 Fixes " + s + " has been released. It's recommended to try the latest version.");
 				}
@@ -522,13 +519,15 @@ public final class Skript extends JavaPlugin implements Listener {
 		});
 	}
 	
+	@Nullable
 	static String getMirreVersion(){
 		try {
+		  //FIXME Update site seems to be down
 	      URL url = new URL("http://mirre.eu.pn/version/");
 	      Scanner scanner = new Scanner(url.openStream());
-	      String str = "";
+	      @Nullable String str = null;
 	      while (scanner.hasNext()) {
-	          str = str + scanner.next();
+	          str = str != null ? str + scanner.next() : scanner.next();
 	      }
 	      scanner.close();
 	      return str;
@@ -536,7 +535,7 @@ public final class Skript extends JavaPlugin implements Listener {
 	    catch (IOException ex) {
 	    	
 	    }
-	    return "";
+	    return null;
 	}
 	
 	private static Version minecraftVersion = new Version(666);
